@@ -7,6 +7,9 @@ $data = array('name' => $_POST['user_name'], 'email' => $_POST['user_email'], 'p
 $query = initBase()->prepare('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
 $query->execute($data);
 
-$data['password'] = '';
+session_start();
+
+$result = $_SESSION['message'] = 'Data successfully send';
+
 header('Location: /');
 exit;

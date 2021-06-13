@@ -13,16 +13,22 @@
 <body class="d-flex align-items-center flex-column w-20 p-3 text-center"
       style=" height: 100vh; background-image: url(/img/background.jpg); background-size: cover">
 
-<h1><?= $title ?? 'Administration Page' ?></h1>
+<h1><?= $title ?? '' ?></h1>
 
 <main>
     <?= include 'templates/menu.php' ?>
-
+    <!-- проверяем если есть сессия с ключем мессадж то выводим его через алерт, если нет, то ничего, затем завершаем вызов сессии и закрываем проверку -->
+    <?php if (isset($_SESSION['message'])) : ?>
+    <div class="alert alert-primary" role="alert">
+        <?= $_SESSION['message'] ?>
+    </div>
+    <?php unset($_SESSION['message']); endif; ?>
     <!-- здесь будет контент (стрианцы) которые собирается в буфер в файле index.php -->
     <?= $content ?? '' ?>
+
 </main>
 
-<footer class="position-absolute bottom-0">
+<footer class="bottom-0">
     <?= include 'templates/footer.php' ?>
 </footer>
 </body>
