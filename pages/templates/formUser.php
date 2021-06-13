@@ -1,9 +1,3 @@
-<h1>User Add Page</h1>
-
-<?php
-include 'menu.php';
-?>
-
 <form action="/DB/writeUser.php" method="post">
     <div class="mb-3">
         <label>
@@ -31,3 +25,7 @@ include 'menu.php';
 
     <button class="btn btn-outline-primary mb-3">Submit</button>
 </form>
+
+<?php
+
+?>

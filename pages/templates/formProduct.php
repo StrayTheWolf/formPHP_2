@@ -1,9 +1,3 @@
-<h1>Products Add Page</h1>
-
-<?php
-include 'menu.php';
-?>
-
 <form action="/DB/writeProduct.php" method="post">
     <div class="mb-3">
         <label>
